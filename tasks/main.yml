@@ -1,0 +1,30 @@
+---
+- name: Check if Composer is installed.
+  stat: "path={{ composer_path }}"
+  register: composer_bin
+
+- name: Download and install Composer into the target directory
+  shell: curl -sS https://getcomposer.org/installer | php -- --install-dir={{ composer_path|dirname }} --filename={{ composer_path|basename }}
+  args:
+    creates: "{{ composer_path }}"
+  when: not composer_bin.stat.exists
+
+- name: Get stat of composer file
+  stat:
+    path="{{ composer_path }}"
+  register: composer_stat
+
+- name: Test if composer file exist
+  fail:
+    msg="{{ composer_path }} isn't exist"
+  when: composer_stat.stat.exists == false
+
+- name: Get date for composer update
+  shell: date --date='{{ composer_update_day }} days ago' +'%s'
+  register: composer_date
+  changed_when: False
+  when: composer_update
+
+- name: Update composer if necessary
+  shell: "{{ composer_path }} selfupdate"
+  when: composer_date.stdout|int > composer_stat.stat.mtime|int
