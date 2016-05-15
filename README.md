@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/enricorufnak/ansible-role-composer.svg?branch=master)](https://travis-ci.org/enricorufnak/ansible-role-composer)
+
 Ansible Role: Composer
 =========
 
