@@ -1,4 +1,4 @@
-Role Name
+Ansible Role: Composer
 =========
 
 Installs Composer, the PHP Dependency Manager, on any Linux system.
