@@ -1,6 +1,8 @@
 ---
 - hosts: localhost
   remote_user: root
+  pre_tasks:
+    - name: install php
+      apt: name=php state=present
   roles:
-    - geerlingguy.php
     - ansible-role-composer
