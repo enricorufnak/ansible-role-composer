@@ -3,6 +3,6 @@
   remote_user: root
   pre_tasks:
     - name: install php
-      apt: name=php state=present
+      apt: name=php5 state=present
   roles:
     - ansible-role-composer
