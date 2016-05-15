@@ -9,7 +9,7 @@ Requirements
 ------------
 
 - `php` (version 5.4+)
-- `git
+- `git`
 
 Role Variables
 --------------
