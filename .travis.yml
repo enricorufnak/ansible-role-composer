@@ -4,6 +4,12 @@ sudo: required
 language: python
 python: "2.7"
 
+# Install python
+addons:
+  apt:
+    packages:
+    - python-pip
+
 install:
   # Install ansible
   - pip install ansible

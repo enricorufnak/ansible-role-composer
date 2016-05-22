@@ -3,7 +3,7 @@
 Ansible Role: Composer
 =========
 
-Installs Composer, the PHP Dependency Manager, on any Linux system.
+Installs Composer on Linux.
 
 Requirements
 ------------
@@ -43,7 +43,7 @@ After the playbook runs, `composer` will be placed in `/usr/local/bin/composer`,
 License
 -------
 
-MIT / BSD
+MIT
 
 Author Information
 ------------------
