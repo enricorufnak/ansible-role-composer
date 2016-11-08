@@ -31,5 +31,7 @@
 
 - name: Update composer if necessary
   shell: "{{ composer_path }} selfupdate"
+  register: composer_update_output
+  changed_when: "'Updating to version' in composer_update_output.stdout"
   when: composer_update
   become: yes
