@@ -22,10 +22,6 @@ Set this to false to disable Composer update to the latest release every time th
 
     composer_update: true
 
-Days ago when Composer has to be updated:
-
-    composer_update_day: 30
-
 Dependencies
 ------------
 

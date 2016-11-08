@@ -29,13 +29,7 @@
     msg="{{ composer_path }} isn't exist"
   when: composer_stat.stat.exists == false
 
-- name: Get date for composer update
-  shell: date --date='{{ composer_update_day }} days ago' +'%s'
-  register: composer_date
-  changed_when: False
-  when: composer_update
-
 - name: Update composer if necessary
   shell: "{{ composer_path }} selfupdate"
-  when: composer_date.stdout|int > composer_stat.stat.mtime|int
+  when: composer_update
   become: yes
