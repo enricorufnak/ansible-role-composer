@@ -18,9 +18,9 @@ The path where composer will be installed and available to your system:
 
     composer_path: /usr/local/bin/composer
 
-Set this to false to disable Composer update to the latest release every time the playbook is run:
+Set this to true to enable Composer update to the latest release every time the playbook is run:
 
-    composer_update: true
+    composer_update: false
 
 Dependencies
 ------------

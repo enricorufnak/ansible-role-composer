@@ -1,3 +1,3 @@
 ---
 composer_path: /usr/local/bin/composer
-composer_update: true
+composer_update: false
